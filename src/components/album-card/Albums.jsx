@@ -3,7 +3,6 @@ import { Children } from "react";
 import "./albums.css";
 
 function AlbumCard(props) {
-  console.log(props.album.snippet);
   return (
     <div className="album-item" id="props.album.id">
       <img
@@ -12,7 +11,6 @@ function AlbumCard(props) {
         loading="lazy"
       />
       <div className="album-name">{props.album.snippet.title}</div>
-      <div className="album-description">{props.album.snippet.description}</div>
     </div>
   );
 }
@@ -21,7 +19,7 @@ function AlbumCards(props) {
   const cards = props.albumData.map((card) => {
     return <AlbumCard album={card} />;
   });
-  return <div>{cards}</div>;
+  return <div class="album-container">{cards}</div>;
 }
 
 export default function Albums(props) {

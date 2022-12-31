@@ -29,12 +29,15 @@ async function fetchData() {
   }
   let unique = [];
   tempAlbumData.forEach((element) => {
-    if (!unique.includes(element.snippet.title)) {
+    if (
+      !unique.includes(element.snippet.title) &&
+      element.snippet.thumbnails.default.url !=
+        "https://i.ytimg.com/img/no_thumbnail.jpg"
+    ) {
       unique.push(element.snippet.title);
       albumData.push(element);
     }
   });
-  console.log(albumData);
 }
 
 function App() {
@@ -43,7 +46,6 @@ function App() {
   useEffect(() => {
     fetchData().then(() => {
       setLoaded(true);
-      console.log(loaded);
     }, []);
   });
   return (
