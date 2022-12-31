@@ -1,6 +1,6 @@
 import React from "react";
 import "./sidebar.css";
-import logo from "../../images/youtube_spotify.png";
+import logo from "../../images/icons8-youtube-music.svg";
 import home from "../../images/home_black_24dp.svg";
 import layers from "../../images/layers_black_24dp.svg";
 import search from "../../images/search_black_24dp.svg";
