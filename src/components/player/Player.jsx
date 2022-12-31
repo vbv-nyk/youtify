@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function player() {
+export default function Player() {
   return (
     <div>player</div>
   )

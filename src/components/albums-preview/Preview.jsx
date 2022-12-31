@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function preview() {
+export default function Preview() {
   return (
     <div>preview</div>
   )
