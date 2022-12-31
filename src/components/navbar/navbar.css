@@ -1,9 +1,9 @@
 .navbar {
-  grid-column: 2/3;
-  grid-row: 1/2;
-  background-color: #101010;
+  background-color: #10101000;
   display: flex;
   justify-content: center;
+  grid-row: 1 / 1;
+  grid-column: 2/3;
   align-items: center;
   font-family: spotifyFont;
 }
