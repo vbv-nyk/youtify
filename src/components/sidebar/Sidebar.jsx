@@ -44,7 +44,7 @@ export default function Sidebar() {
       <div className="github-link-container">
         <img src={github} alt="" />
         <a className="github-link" href="google.com">
-          View Source Code
+          View Source
         </a>
       </div>
     </div>

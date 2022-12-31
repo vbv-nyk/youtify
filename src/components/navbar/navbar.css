@@ -1,0 +1,56 @@
+.navbar {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  background-color: #101010;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: spotifyFont;
+}
+
+@font-face {
+  font-family: spotifyFont;
+  src: url("/src/fonts/Circular/CircularStd-Bold.otf");
+  font-weight: bolder;
+}
+.forward-button {
+  margin-right: auto;
+}
+
+.premium,
+.support,
+.signup {
+  padding: 5px 15px;
+  text-decoration: none;
+  color: darkgray;
+  letter-spacing: 1.2px;
+}
+
+.signup {
+  letter-spacing: 0;
+  font-size: 14px;
+  padding: 5px 30px;
+}
+.support {
+  border-right: solid 1px white;
+}
+
+.login {
+  padding: 14px 30px;
+  border: none;
+  background-color: white;
+  font-weight: 600;
+  border-radius: 25px;
+  margin: 7px 0px;
+  margin-right: 30px;
+}
+
+.forward-button,
+.back-button {
+  background-color: rgba(0, 0, 0, 0.226);
+  border: solid 1px transparent;
+  color: darkgrey;
+  margin-left: 20px;
+  font-size: x-large;
+  border-radius: 50%;
+}

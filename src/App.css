@@ -1,7 +1,7 @@
-.App{
+.App {
   display: grid;
-  grid-template-columns: min(40%,200px) auto;
-  grid-template-rows: 10% auto 15%;
+  grid-template-columns: 20% auto;
+  grid-template-rows: max-content auto 15%;
   height: 100vh;
   max-height: 100vh;
 }
