@@ -2,7 +2,9 @@
   background-color: #10101000;
   display: flex;
   justify-content: center;
-  grid-row: 1 / 1;
+  grid-row: 1/2;
+  z-index: 1;
+  flex-basis: auto;
   grid-column: 2/3;
   align-items: center;
   font-family: spotifyFont;
@@ -17,6 +19,15 @@
   margin-right: auto;
 }
 
+.song-input {
+  margin-left: 10px;
+  flex-grow: 1;
+  padding-left: 30px;
+  background: white url(../../images/search_black_24dp.svg) left no-repeat;
+  border: 10px solid transparent;
+  border-radius: 25px;
+}
+
 .premium,
 .support,
 .signup {
@@ -24,6 +35,8 @@
   text-decoration: none;
   color: darkgray;
   letter-spacing: 1.2px;
+  overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .signup {
@@ -40,6 +53,7 @@
   border: none;
   background-color: white;
   font-weight: 600;
+  white-space: nowrap;
   border-radius: 25px;
   margin: 7px 0px;
   margin-right: 30px;
