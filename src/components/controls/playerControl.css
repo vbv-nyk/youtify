@@ -7,6 +7,9 @@
   padding: auto 0px;
   font-family: spotifyFont;
   padding-left: 20px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 @font-face {
