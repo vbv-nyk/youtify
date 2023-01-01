@@ -42,13 +42,15 @@
 }
 
 .album-container {
+  width: 640px;
+  margin: auto;
   padding: 20px;
-  margin: 15px 20px;
-  gap: 7px;
+  gap: 5px;
   background-color: rgba(255, 255, 255, 0.028);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   font-family: spotifyFont;
+  justify-items: center;
   color: white;
 }
 
