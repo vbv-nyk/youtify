@@ -9,35 +9,25 @@ import { useEffect, useState } from "react";
 
 const api_key = "AIzaSyCALUbMM1nnBb7wP31KnRHog9hb7Bgkx00";
 const channel_id = "UC-9-kyTW8ZkZNDHQJ6FgpwQ";
-const albumData = [];
+let countryCode = "IN";
+let albumData = [];
 async function fetchData() {
   let fetched = 0;
   let maxResults = 100;
   let nextPageToken = "";
-  let tempAlbumData = [];
   while (fetched < maxResults) {
+    albumData = [];
     const youtubeData = await fetch(
-      `https://www.googleapis.com/youtube/v3/playlists?channelId=${channel_id}&part=snippet&key=${api_key}&maxResults=50&pageToken=${nextPageToken}`
+      `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=${countryCode}&videoCategoryId=10&key=${api_key}&maxResults=50&pageToken=${nextPageToken}`
     );
     const youtubeDataJSON = await youtubeData.json();
     maxResults = youtubeDataJSON.pageInfo.totalResults;
     for (let item of youtubeDataJSON.items) {
-      tempAlbumData.push(item);
+      albumData.push(item);
     }
     fetched += 50;
     nextPageToken = youtubeDataJSON.nextPageToken;
   }
-  let unique = [];
-  tempAlbumData.forEach((element) => {
-    if (
-      !unique.includes(element.snippet.title) &&
-      element.snippet.thumbnails.default.url !=
-        "https://i.ytimg.com/img/no_thumbnail.jpg"
-    ) {
-      unique.push(element.snippet.title);
-      albumData.push(element);
-    }
-  });
 }
 
 function App() {
