@@ -9,7 +9,9 @@ function AlbumCard(props) {
         alt={props.album.snippet.thumbnails.default.url}
         loading="lazy"
       />
-      {/* <div className="album-name">{props.album.snippet.title}</div> */}
+      <div className="overlay-info">
+        {/* <div className="album-name">{props.album.snippet.title}</div> */}
+      </div>
     </div>
   );
 }
