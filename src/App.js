@@ -2,9 +2,9 @@ import "./App.css";
 import Sidebar from "./components/sidebar/Sidebar";
 import Navbar from "./components/navbar/Navbar";
 import Player from "./components/player/Player";
-import PlayerControl from "./components/controls/PlayerControl";
 import Albums from "./components/album-card/Albums";
 import { useEffect, useState } from "react";
+import PageFooter from "./components/footer/PageFooter";
 
 const api_key = "AIzaSyCALUbMM1nnBb7wP31KnRHog9hb7Bgkx00";
 let countryCode = "IN";
@@ -44,7 +44,7 @@ function App() {
       />
       <Navbar searchEnabled={searchEnabled} />
       <Player>{loaded && <Albums albumData={albumData} />}</Player>
-      <PlayerControl />
+      <PageFooter />
     </div>
   );
 }
