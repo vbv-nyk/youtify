@@ -52,6 +52,7 @@
   font-family: spotifyFont;
   justify-items: center;
   color: white;
+  margin-bottom: 100px;
 }
 
 .album-item {

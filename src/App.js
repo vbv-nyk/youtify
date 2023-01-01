@@ -5,6 +5,7 @@ import Player from "./components/player/Player";
 import Albums from "./components/album-card/Albums";
 import { useEffect, useState } from "react";
 import PageFooter from "./components/footer/PageFooter";
+import MusicPlayer from "./components/music-player/MusicPLayer";
 
 const api_key = "AIzaSyCALUbMM1nnBb7wP31KnRHog9hb7Bgkx00";
 let countryCode = "IN";
@@ -44,6 +45,7 @@ function App() {
       />
       <Navbar searchEnabled={searchEnabled} />
       <Player>{loaded && <Albums albumData={albumData} />}</Player>
+      <MusicPlayer />
       <PageFooter />
     </div>
   );
