@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Sidebar from "./components/sidebar/Sidebar";
 import Navbar from "./components/navbar/Navbar";
@@ -8,7 +7,6 @@ import Albums from "./components/album-card/Albums";
 import { useEffect, useState } from "react";
 
 const api_key = "AIzaSyCALUbMM1nnBb7wP31KnRHog9hb7Bgkx00";
-const channel_id = "UC-9-kyTW8ZkZNDHQJ6FgpwQ";
 let countryCode = "IN";
 let albumData = [];
 async function fetchData() {

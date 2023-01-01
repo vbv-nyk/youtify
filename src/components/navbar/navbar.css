@@ -21,8 +21,9 @@
   flex-grow: 1;
   width: max-content;
   padding: 5px 0px;
-  padding-left: 22px;
+  padding-left: 20px;
   background: white url(../../images/search_black_24dp.svg) left no-repeat;
+  background-size: 20px;
   border: 0px solid transparent;
   border-radius: 25px;
 }
