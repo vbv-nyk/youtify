@@ -9,7 +9,7 @@ export default function Navbar(props) {
         <input
           className="song-input"
           type="text"
-          placeholder="What do you want to listen to"
+          placeholder="What do you want to listen to?"
         />
       )}
 

@@ -20,12 +20,24 @@
   margin-left: 10px;
   flex-grow: 1;
   width: max-content;
-  padding: 5px 0px;
-  padding-left: 20px;
+  padding: 8px 0px;
+  padding-left: 30px;
   background: white url(../../images/search_black_24dp.svg) left no-repeat;
-  background-size: 20px;
-  border: 0px solid transparent;
+  background-size: 25px;
+  border: none;
+  border-left: 10px solid transparent;
   border-radius: 25px;
+  font-size: 10px;
+  font-family: spotifyFont;
+}
+
+.song-input:focus {
+  outline: none;
+}
+
+::placeholder {
+  font-size: 10px;
+  font-family: spotifyFont;
 }
 
 .premium,
@@ -33,6 +45,7 @@
 .signup {
   padding: 5px 15px;
   text-decoration: none;
+  font-size: smaller;
   color: darkgray;
   letter-spacing: 1.2px;
   overflow: ellipsis;
@@ -49,7 +62,7 @@
 }
 
 .login {
-  padding: 14px 30px;
+  padding: 9px 30px;
   border: none;
   background-color: white;
   font-weight: 600;

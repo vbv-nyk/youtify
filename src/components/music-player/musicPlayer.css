@@ -1,16 +1,46 @@
-.music-info {
+.player-info {
   height: 70px;
   background-color: #181818;
   bottom: 15px;
+  left: 170px;
   position: fixed;
+  width: calc(100% - 170px);
+  border-top: solid 1px #1f1f1f;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.current-song-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.currently-playing {
+  display: flex;
+  align-items: center;
+  font-size: small;
+  gap: 10px;
+}
+
+.music-name {
+  color: white;
+}
+
+.artists {
+  font-size: xx-small;
+  color: lightgray;
+}
+
+.music-thumbnail {
+  height: 50px;
+  width: 50px;
+}
+.music-info {
   display: flex;
   gap: 10px;
   flex-direction: column;
   justify-content: center;
-  width: calc(100% - 170px);
-  justify-content: center;
-  left: 170px;
-  border-top: solid 1px #1f1f1f;
   align-items: center;
 }
 
@@ -27,12 +57,7 @@
   align-items: center;
   gap: 15px;
 }
-.seek-bar {
-  width: 300px;
-  height: 4px;
-  border-radius: 20px;
-  background-color: #5e5e5e;
-}
+
 .music-player img {
   height: 22px;
   width: 22px;
@@ -41,4 +66,42 @@
   background-color: white;
   border-radius: 50%;
   padding: 2px;
+}
+.extra-controls {
+  display: flex;
+  width: 120px;
+  align-items: center;
+  gap: 10px;
+}
+.extra-controls img {
+  height: 16px;
+  width: 16px;
+}
+
+.extra-controls input {
+  width: 100px;
+  border: solid 1px transparent;
+}
+
+.seek-bar-container input {
+  width: 200px;
+  border: solid 1px transparent;
+  border-radius: 25px;
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  border-radius: 25px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: white;
+  opacity: 1;
+  height: 8px;
+  margin-top: -2px;
+  width: 3px;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 300px;
+  height: 4px;
+  background: #bababa;
 }
