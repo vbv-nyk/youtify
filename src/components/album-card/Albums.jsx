@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./albums.css";
 import playButton from "../../images/play_song.png";
+import { Link } from "react-router-dom";
 
 function AlbumCard(props) {
   function changeNavColor() {
@@ -14,6 +15,7 @@ function AlbumCard(props) {
     const navBar = document.querySelector(".navbar");
     navBar.style.background = "#222222";
   }
+
   return (
     <div
       className="album-item"
@@ -25,10 +27,12 @@ function AlbumCard(props) {
         alt={props.album.snippet.thumbnails.default.url}
         loading="lazy"
       />
-      <div className="overlay-info">
+      <Link to={`/player/${props.album.id}`} className="overlay-info">
         <img src={playButton} />
-        <div className="album-name">{props.album.snippet.title}</div>
-      </div>
+        <div to={`/player/${props.album.id}`} className="album-name">
+          {props.album.snippet.title}
+        </div>
+      </Link>
     </div>
   );
 }

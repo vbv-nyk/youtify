@@ -7,6 +7,7 @@ import search from "../../images/search_white_24dp.svg";
 import download from "../../images/download_black_24dp.svg";
 import youtube from "../../images/icons8-youtube.svg";
 import github from "../../images/icons8-github.svg";
+import { Link } from "react-router-dom";
 
 export default function Sidebar(props) {
   return (
@@ -19,9 +20,13 @@ export default function Sidebar(props) {
       </div>
       <div className="home-container">
         <img src={home} alt="" />
-        <a className="home" onClick={() => props.setSearchEnabled(false)}>
+        <Link
+          to="/player"
+          className="home"
+          onClick={() => props.setSearchEnabled(false)}
+        >
           Home
-        </a>
+        </Link>
       </div>
       <div className="search-bar-container">
         <img src={search} alt="" />
@@ -43,9 +48,9 @@ export default function Sidebar(props) {
       </div>
       <div className="browse-youtube-container">
         <img src={youtube} alt="" />
-        <a className="browse-youtube" href="google.com">
+        <Link to="nowPlaying" className="browse-youtube" href="google.com">
           Now Playing
-        </a>
+        </Link>
       </div>
 
       <div className="github-link-container">

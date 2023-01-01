@@ -6,6 +6,8 @@ import Albums from "./components/album-card/Albums";
 import { useEffect, useState } from "react";
 import PageFooter from "./components/footer/PageFooter";
 import MusicPlayer from "./components/music-player/MusicPLayer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import YoutubePlayer from "./components/YoutubePlayer/YoutubePlayer";
 
 const api_key = "AIzaSyCALUbMM1nnBb7wP31KnRHog9hb7Bgkx00";
 let countryCode = "IN";
@@ -38,16 +40,35 @@ function App() {
     }, []);
   });
   return (
-    <div className="App">
-      <Sidebar
-        searchEnabled={searchEnabled}
-        setSearchEnabled={setSearchEnabled}
-      />
-      <Navbar searchEnabled={searchEnabled} />
-      <Player>{loaded && <Albums albumData={albumData} />}</Player>
-      <MusicPlayer />
-      <PageFooter />
-    </div>
+    <Router>
+      <div class="App">
+        <Sidebar
+          searchEnabled={searchEnabled}
+          setSearchEnabled={setSearchEnabled}
+        />
+        <Navbar searchEnabled={searchEnabled} />
+        <Routes>
+          <Route
+            path="/player"
+            exact
+            element={
+              <Player>{loaded && <Albums albumData={albumData} />}</Player>
+            }
+          />
+          <Route
+            path="/nowPlaying/"
+            exact
+            element={<Player>{<YoutubePlayer />}</Player>}
+          />
+          <Route
+            path="/player/:id"
+            element={<Player>{<YoutubePlayer />}</Player>}
+          />
+        </Routes>
+        <MusicPlayer />
+        <PageFooter />
+      </div>
+    </Router>
   );
 }
 

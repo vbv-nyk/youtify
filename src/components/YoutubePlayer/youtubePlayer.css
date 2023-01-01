@@ -1,0 +1,6 @@
+.youtube-player-container {
+  height: calc(100vh - 71px - 15px - 48px);
+}
+.youtube-player {
+  height: 100%;
+}
