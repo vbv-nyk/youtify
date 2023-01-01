@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./albums.css";
+import playButton from "../../images/play_song.png";
 
 function AlbumCard(props) {
   return (
@@ -10,7 +11,8 @@ function AlbumCard(props) {
         loading="lazy"
       />
       <div className="overlay-info">
-        {/* <div className="album-name">{props.album.snippet.title}</div> */}
+        <img src={playButton} />
+        <div className="album-name">{props.album.snippet.title}</div>
       </div>
     </div>
   );

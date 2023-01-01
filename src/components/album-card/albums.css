@@ -70,13 +70,34 @@
   text-align: center;
 }
 
+.overlay-info {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-direction: column;
+}
+
+.overlay-info img {
+  margin-top: 50px;
+  height: 50px;
+  width: 50px;
+}
+
 .album-item:hover .overlay-info {
+  display: flex;
   width: 240px;
   height: 180px;
   background: linear-gradient(
     to bottom,
+    black,
+    black,
     rgba(128, 128, 128, 0.798),
     rgba(128, 128, 128, 0.798),
+    rgba(128, 128, 128, 0.798),
+    rgba(128, 128, 128, 0.798),
+    black,
+    black,
     black,
     black
   );
@@ -89,6 +110,8 @@
 .album-item:hover .album-name {
   white-space: normal;
   overflow: visible;
-  text-align: center;
+  font-family: spotifyFont;
   word-wrap: break-word;
+  font-size: x-small;
+  padding: 30px;
 }
