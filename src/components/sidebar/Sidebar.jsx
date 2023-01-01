@@ -21,7 +21,7 @@ export default function Sidebar(props) {
       <div className="home-container">
         <img src={home} alt="" />
         <Link
-          to="/player"
+          to="/"
           className="home"
           onClick={() => props.setSearchEnabled(false)}
         >

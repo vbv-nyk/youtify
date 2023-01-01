@@ -41,7 +41,7 @@ function App() {
   });
   return (
     <Router>
-      <div class="App">
+      <div className="App">
         <Sidebar
           searchEnabled={searchEnabled}
           setSearchEnabled={setSearchEnabled}
@@ -49,7 +49,7 @@ function App() {
         <Navbar searchEnabled={searchEnabled} />
         <Routes>
           <Route
-            path="/player"
+            path="/"
             exact
             element={
               <Player>{loaded && <Albums albumData={albumData} />}</Player>

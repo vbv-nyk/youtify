@@ -69,7 +69,7 @@
   white-space: nowrap;
   overflow: hidden;
   color: white;
-  text-overflow: clip;
+  text-decoration: none;
   text-align: center;
 }
 

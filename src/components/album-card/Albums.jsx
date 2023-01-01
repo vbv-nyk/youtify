@@ -27,11 +27,13 @@ function AlbumCard(props) {
         alt={props.album.snippet.thumbnails.default.url}
         loading="lazy"
       />
-      <Link to={`/player/${props.album.id}`} className="overlay-info">
+      <Link
+        to={`/player/${props.album.id}`}
+        style={{ textDecoration: "none" }}
+        className="overlay-info"
+      >
         <img src={playButton} />
-        <div to={`/player/${props.album.id}`} className="album-name">
-          {props.album.snippet.title}
-        </div>
+        <div className="album-name">{props.album.snippet.title}</div>
       </Link>
     </div>
   );
