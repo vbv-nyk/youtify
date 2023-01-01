@@ -12,11 +12,6 @@
   font-family: spotifyFont;
 }
 
-@font-face {
-  font-family: spotifyFont;
-  src: url("/src/fonts/Circular/CircularStd-Bold.otf");
-  font-weight: bolder;
-}
 .forward-button {
   margin-right: auto;
 }
@@ -24,9 +19,11 @@
 .song-input {
   margin-left: 10px;
   flex-grow: 1;
-  padding-left: 30px;
+  width: max-content;
+  padding: 5px 0px;
+  padding-left: 22px;
   background: white url(../../images/search_black_24dp.svg) left no-repeat;
-  border: 10px solid transparent;
+  border: 0px solid transparent;
   border-radius: 25px;
 }
 
