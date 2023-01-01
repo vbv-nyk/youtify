@@ -3,8 +3,23 @@ import "./albums.css";
 import playButton from "../../images/play_song.png";
 
 function AlbumCard(props) {
+  function changeNavColor() {
+    const navBar = document.querySelector(".navbar");
+    const R = Math.random() * 30;
+    const G = Math.random() * 30;
+    const B = Math.random() * 30;
+    navBar.style.background = `linear-gradient(to bottom,rgba(${R},${G},${B},1.0),rgba(${G},${R},${B},1.0),rgba(${B},${G},${R},1.0))`;
+  }
+  function defaultNavColor() {
+    const navBar = document.querySelector(".navbar");
+    navBar.style.background = "#222222";
+  }
   return (
-    <div className="album-item">
+    <div
+      className="album-item"
+      onMouseEnter={() => changeNavColor()}
+      onMouseLeave={() => defaultNavColor()}
+    >
       <img
         src={props.album.snippet.thumbnails.high.url}
         alt={props.album.snippet.thumbnails.default.url}

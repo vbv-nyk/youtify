@@ -1,5 +1,5 @@
 .navbar {
-  background: #222222;
+  background: var(#222222);
   display: flex;
   justify-content: center;
   position: sticky;
@@ -8,6 +8,7 @@
   z-index: 1;
   flex-basis: auto;
   grid-column: 2/3;
+  transition: all 500ms;
   align-items: center;
   font-family: spotifyFont;
 }

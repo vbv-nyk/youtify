@@ -14,7 +14,7 @@
 .title {
   color: rgb(255, 255, 255);
   font-family: spotifyFont;
-  margin-left: 1%;
+  margin-left: 10px;
   padding: 5px;
   font-size: x-large;
 }
