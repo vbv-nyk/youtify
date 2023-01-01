@@ -44,7 +44,7 @@ export default function Sidebar(props) {
       <div className="browse-youtube-container">
         <img src={youtube} alt="" />
         <a className="browse-youtube" href="google.com">
-          Youtube Music
+          Now Playing
         </a>
       </div>
 

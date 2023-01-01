@@ -8,7 +8,6 @@ function AlbumCard(props) {
     const R = Math.trunc(Math.random() * 80);
     const G = Math.trunc(Math.random() * 80);
     const B = Math.trunc(Math.random() * 80);
-    console.log(R, G, B);
     navBar.style.background = `linear-gradient(to bottom,rgba(${R},${G},${B},1.0),rgba(${G},${R},${B},1.0))`;
   }
   function defaultNavColor() {
