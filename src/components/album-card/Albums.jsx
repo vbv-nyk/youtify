@@ -16,17 +16,20 @@ function AlbumCard(props) {
 
 function AlbumController({ albumCount, setAlbumCount, albumData }) {
   return (
-    <div className="navigation">
-      <button
-        className="back-button"
-        onClick={() => setAlbumCount((n) => Math.max(n - 9, 0))}
-      >{`Previous Page`}</button>
-      <button
-        className="forward-button"
-        onClick={() =>
-          setAlbumCount((n) => Math.min(n + 9, albumData.length - 9))
-        }
-      >{`Next Page`}</button>
+    <div className="header-holder">
+      <div className="title">Trending in India</div>
+      <div className="navigation">
+        <button
+          className="back-button"
+          onClick={() => setAlbumCount((n) => Math.max(n - 9, 0))}
+        >{`Previous Page`}</button>
+        <button
+          className="forward-button"
+          onClick={() =>
+            setAlbumCount((n) => Math.min(n + 9, albumData.length - 9))
+          }
+        >{`Next Page`}</button>
+      </div>
     </div>
   );
 }
