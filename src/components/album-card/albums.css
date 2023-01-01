@@ -15,11 +15,10 @@
   color: rgb(255, 255, 255);
   font-family: spotifyFont;
   padding: 5px;
-  margin-left: 30px;
   font-size: x-large;
 }
 .navigation {
-  margin-right: 40px;
+  margin-right: 10px;
   gap: 5px;
   display: flex;
   align-items: center;
@@ -42,9 +41,9 @@
 }
 
 .album-container {
-  width: 620px;
+  width: 740px;
   margin: auto;
-  padding: 20px;
+  padding: 5px;
   row-gap: 5px;
   background-color: rgba(255, 255, 255, 0.028);
   display: grid;
@@ -55,7 +54,7 @@
 }
 
 .album-item {
-  width: 200px;
+  width: 240px;
   text-align: left;
   background-color: rgba(106, 103, 103, 0.093);
   display: flex;
