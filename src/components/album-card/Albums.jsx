@@ -5,10 +5,10 @@ import playButton from "../../images/play_song.png";
 function AlbumCard(props) {
   function changeNavColor() {
     const navBar = document.querySelector(".navbar");
-    const R = Math.random() * 30;
-    const G = Math.random() * 30;
-    const B = Math.random() * 30;
-    navBar.style.background = `linear-gradient(to bottom,rgba(${R},${G},${B},1.0),rgba(${G},${R},${B},1.0),rgba(${B},${G},${R},1.0))`;
+    const R = Math.random() * 20;
+    const G = Math.random() * 1;
+    const B = Math.random() * 20;
+    navBar.style.background = `linear-gradient(to bottom,rgba(${R},${G},${B},1.0),rgba(${G},${R},${B},1.0))`;
   }
   function defaultNavColor() {
     const navBar = document.querySelector(".navbar");

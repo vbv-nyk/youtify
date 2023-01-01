@@ -8,7 +8,6 @@
   z-index: 1;
   flex-basis: auto;
   grid-column: 2/3;
-  transition: all 500ms;
   align-items: center;
   font-family: spotifyFont;
 }
