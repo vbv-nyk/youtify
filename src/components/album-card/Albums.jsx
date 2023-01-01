@@ -5,12 +5,12 @@ import "./albums.css";
 function AlbumCard(props) {
   return (
     <div className="album-item">
-      <img
+      {/* <img
         src={props.album.snippet.thumbnails.medium.url}
         alt={props.album.snippet.thumbnails.default.url}
         loading="lazy"
       />
-      <div className="album-name">{props.album.snippet.title}</div>
+      <div className="album-name">{props.album.snippet.title}</div> */}
     </div>
   );
 }
@@ -27,13 +27,13 @@ function AlbumCards(props) {
         <button
           className="back-button"
           onClick={() => setAlbumCount((n) => Math.max(n - 6, 0))}
-        >{`<`}</button>
+        >{`Next Page`}</button>
         <button
           className="forward-button"
           onClick={() =>
             setAlbumCount((n) => Math.min(n + 6, props.albumData.length - 6))
           }
-        >{`>`}</button>
+        >{`Previous Page`}</button>
       </div>
       <div className="album-container">{cards}</div>;
     </div>
