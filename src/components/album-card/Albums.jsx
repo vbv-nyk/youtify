@@ -16,6 +16,16 @@ function AlbumCard(props) {
     navBar.style.background = "#222222";
   }
 
+  function updateMusicController() {
+    props.setPlaying(true);
+    console.log(props);
+    const currentSongData = {
+      title: props.album.snippet.title,
+      thumbnailURL: props.album.snippet.thumbnails.high.url,
+      artistName: props.album.snippet.channelTitle,
+    };
+    props.setVideoData(currentSongData);
+  }
   return (
     <div
       className="album-item"
@@ -31,6 +41,7 @@ function AlbumCard(props) {
         to={`/player/${props.album.id}`}
         style={{ textDecoration: "none" }}
         className="overlay-info"
+        onClick={() => updateMusicController()}
       >
         <img src={playButton} />
         <div className="album-name">{props.album.snippet.title}</div>
@@ -62,7 +73,15 @@ function AlbumCards(props) {
   const [albumCount, setAlbumCount] = useState(0);
   const currentAlbumData = props.albumData.slice(albumCount, albumCount + 9);
   const cards = currentAlbumData.map((card) => {
-    return <AlbumCard album={card} key={card.id} />;
+    return (
+      <AlbumCard
+        album={card}
+        key={card.id}
+        playing={props.playing}
+        setPlaying={props.setPlaying}
+        setVideoData={props.setVideoData}
+      />
+    );
   });
   return (
     <div className="album-controller">
@@ -77,5 +96,12 @@ function AlbumCards(props) {
 }
 
 export default function Albums(props) {
-  return <AlbumCards albumData={props.albumData} />;
+  return (
+    <AlbumCards
+      albumData={props.albumData}
+      playing={props.playing}
+      setPlaying={props.setPlaying}
+      setVideoData={props.setVideoData}
+    />
+  );
 }

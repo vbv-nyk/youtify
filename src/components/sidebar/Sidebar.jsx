@@ -23,7 +23,9 @@ export default function Sidebar(props) {
         <Link
           to="/"
           className="home"
-          onClick={() => props.setSearchEnabled(false)}
+          onClick={() => {
+            props.setSearchEnabled(false);
+          }}
         >
           Home
         </Link>

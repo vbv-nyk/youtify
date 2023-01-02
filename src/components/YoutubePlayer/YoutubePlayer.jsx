@@ -2,7 +2,7 @@ import "./youtubePlayer.css";
 import React from "react";
 import YouTube from "react-youtube";
 import { useParams } from "react-router";
-export default function YoutubePlayer({ match }) {
+export default function YoutubePlayer(props) {
   const { id } = useParams();
   const opts = {
     height: "100%",
@@ -18,6 +18,7 @@ export default function YoutubePlayer({ match }) {
         <YouTube
           videoId={id}
           className="youtube-player"
+          host="https://www.youtube.com"
           iframeClassName="yotube-player-iframe"
           opts={opts}
         />

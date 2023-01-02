@@ -34,6 +34,12 @@ async function fetchData() {
 function App() {
   const [searchEnabled, setSearchEnabled] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [videoData, setVideoData] = useState({
+    title: "",
+    thumbnailURL: "",
+    artistName: "",
+  });
   useEffect(() => {
     fetchData().then(() => {
       setLoaded(true);
@@ -45,6 +51,7 @@ function App() {
         <Sidebar
           searchEnabled={searchEnabled}
           setSearchEnabled={setSearchEnabled}
+          setPlaying={setPlaying}
         />
         <Navbar searchEnabled={searchEnabled} />
         <Routes>
@@ -52,20 +59,36 @@ function App() {
             path="/"
             exact
             element={
-              <Player>{loaded && <Albums albumData={albumData} />}</Player>
+              <Player>
+                {loaded && (
+                  <Albums
+                    albumData={albumData}
+                    playing={playing}
+                    setPlaying={setPlaying}
+                    setVideoData={setVideoData}
+                  />
+                )}
+              </Player>
             }
           />
           <Route
-            path="/nowPlaying/"
-            exact
-            element={<Player>{<YoutubePlayer />}</Player>}
+            path="/nowPlaying"
+            element={
+              <Player>
+                <YoutubePlayer />
+              </Player>
+            }
           />
           <Route
             path="/player/:id"
-            element={<Player>{<YoutubePlayer />}</Player>}
+            element={
+              <Player>
+                <YoutubePlayer playing={playing} setPlaying={setPlaying} />
+              </Player>
+            }
           />
         </Routes>
-        <MusicPlayer />
+        {playing && <MusicPlayer videoData={videoData} />}
         <PageFooter />
       </div>
     </Router>

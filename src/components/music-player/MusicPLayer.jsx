@@ -9,14 +9,16 @@ import lyrics from "../../images/lyrics.svg";
 import speaker from "../../images/speaker.svg";
 import repeat from "../../images/repeat.svg";
 
-export default function MusicPlayer() {
+export default function MusicPlayer(props) {
   return (
     <div className="player-info">
-      <div className="currently-playing">
-        <img className="music-thumbnail" />
-        <div className="current-song-details">
-          <div className="music-name">Song Name</div>
-          <div className="artists">Artist Name</div>
+      <div className="thumnail-music-artist">
+        <img src={props.videoData.thumbnailURL} className="music-thumbnail" />
+        <div className="currently-playing">
+          <div className="current-song-details">
+            <div className="music-name">{props.videoData.title}</div>
+            <div className="artists">{props.videoData.artistName}</div>
+          </div>
         </div>
       </div>
       <div className="music-info">
