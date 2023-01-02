@@ -1,0 +1,11 @@
+.countries-container {
+  overflow-y: scroll;
+  list-style: none;
+  left: 50%;
+  bottom: 50%;
+  height: 200px;
+  position: absolute;
+  gap: 5px;
+  z-index: 2;
+  background-color: rgb(155, 128, 128);
+}
