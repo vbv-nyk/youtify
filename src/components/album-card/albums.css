@@ -9,26 +9,32 @@
 .header-holder {
   display: flex;
   gap: 20px;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .title {
   color: rgb(255, 255, 255);
   font-family: spotifyFont;
-  margin-left: 10px;
   padding: 5px;
   font-size: x-large;
 }
 .navigation {
-  margin-right: 1%;
   gap: 5px;
   display: flex;
   align-items: center;
   justify-content: start;
 }
+
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 .navigation .forward-button,
-.navigation .back-button {
+.navigation .back-button,
+.change-location {
   background-color: rgba(0, 0, 0, 0.153);
+  border: none;
   border-radius: 25px;
   height: 20px;
   margin: 0;
@@ -53,7 +59,7 @@
   font-family: spotifyFont;
   justify-items: center;
   color: white;
-  margin-bottom: 10px;
+  margin-bottom: 80px;
 }
 
 .album-item {

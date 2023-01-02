@@ -15,7 +15,6 @@ function AlbumCard(props) {
     const navBar = document.querySelector(".navbar");
     navBar.style.background = "#222222";
   }
-
   function updateMusicController() {
     props.setPlaying(true);
     console.log(props);
@@ -41,7 +40,9 @@ function AlbumCard(props) {
         to={`/player/${props.album.id}`}
         style={{ textDecoration: "none" }}
         className="overlay-info"
-        onClick={() => updateMusicController()}
+        onClick={() => {
+          updateMusicController();
+        }}
       >
         <img src={playButton} />
         <div className="album-name">{props.album.snippet.title}</div>
@@ -50,10 +51,17 @@ function AlbumCard(props) {
   );
 }
 
-function AlbumController({ albumCount, setAlbumCount, albumData }) {
+function AlbumController({ albumCount, setAlbumCount, albumData, location }) {
+  let currentLocation = "Worldwide";
+  if (location !== "") {
+    currentLocation = `in` + location;
+  }
   return (
     <div className="header-holder">
-      <div className="title">Trending in India</div>
+      <div className="location-info">
+        <div className="title">{`Trending ${currentLocation}`}</div>
+        <button className="change-location">Select Location</button>
+      </div>
       <div className="navigation">
         <button
           className="back-button"
@@ -89,6 +97,7 @@ function AlbumCards(props) {
         albumCount={albumCount}
         setAlbumCount={setAlbumCount}
         albumData={props.albumData}
+        location={props.location}
       />
       <div className="album-container">{cards}</div>;
     </div>
@@ -102,6 +111,7 @@ export default function Albums(props) {
       playing={props.playing}
       setPlaying={props.setPlaying}
       setVideoData={props.setVideoData}
+      location={props.location}
     />
   );
 }

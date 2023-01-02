@@ -7,7 +7,7 @@
   width: calc(100vw - 150px);
   border-top: solid 1px #1f1f1f;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .current-song-details {
@@ -28,7 +28,7 @@
   position: relative;
   white-space: nowrap;
   font-size: small;
-  animation: moveTextLeftToRight 10s infinite ease-in-out;
+  animation: moveTextLeftToRight 10s infinite alternate ease-in-out;
 }
 
 @keyframes moveTextLeftToRight {

@@ -25,6 +25,7 @@ export default function Sidebar(props) {
           className="home"
           onClick={() => {
             props.setSearchEnabled(false);
+            props.setCurrentPage((n) => n + 1);
           }}
         >
           Home

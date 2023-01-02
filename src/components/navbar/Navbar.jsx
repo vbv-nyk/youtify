@@ -1,15 +1,35 @@
 import React from "react";
 import "./navbar.css";
 export default function Navbar(props) {
+  function searchSongs() {
+    console.log("Searching");
+  }
+  console.log(props.currentPage);
   return (
     <div className="navbar">
-      <button className="back-button">{`<`}</button>
-      <button className="forward-button">{`>`}</button>
+      <button
+        className="back-button"
+        onClick={() => {
+          if (props.currentPage > 0) {
+            window.history.back();
+            props.setCurrentPage(0);
+          }
+        }}
+      >{`<`}</button>
+      <button
+        className="forward-button"
+        onClick={() => {
+          window.history.forward();
+        }}
+      >
+        {`>`}
+      </button>
       {props.searchEnabled && (
         <input
           className="song-input"
           type="text"
           placeholder="What do you want to listen to?"
+          onInput={() => searchSongs()}
         />
       )}
 

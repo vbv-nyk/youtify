@@ -1,5 +1,5 @@
 import "./youtubePlayer.css";
-import React from "react";
+import React, { useEffect } from "react";
 import YouTube from "react-youtube";
 import { useParams } from "react-router";
 export default function YoutubePlayer(props) {
@@ -21,6 +21,8 @@ export default function YoutubePlayer(props) {
           host="https://www.youtube.com"
           iframeClassName="yotube-player-iframe"
           opts={opts}
+          setCurrentPage={props.setCurrentPage}
+          onReady={() => props.setCurrentPage(1)}
         />
       </div>
     );
