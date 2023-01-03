@@ -24,6 +24,7 @@ export default function Sidebar(props) {
           to="/"
           className="home"
           onClick={() => {
+            props.setSongSearch("");
             props.setSearchEnabled(false);
             props.setCurrentPage((n) => n + 1);
           }}

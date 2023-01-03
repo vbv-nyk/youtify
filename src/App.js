@@ -69,6 +69,7 @@ function App() {
     <Router>
       <div className="App">
         <Sidebar
+          setSongSearch={setSongSearch}
           searchEnabled={searchEnabled}
           setSearchEnabled={setSearchEnabled}
           setPlaying={setPlaying}
@@ -98,6 +99,7 @@ function App() {
                     location={location}
                     setCurrentPage={setCurrentPage}
                     setLocation={setLocation}
+                    setSongSearch={setSongSearch}
                   />
                 )}
               </Player>

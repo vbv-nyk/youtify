@@ -16,6 +16,7 @@ export default function CountryMenu(props) {
           key={country}
           onClick={() => {
             props.setLocation(country);
+            props.setSongSearch("");
             props.setLocationMenu(false);
           }}
         >

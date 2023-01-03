@@ -75,6 +75,7 @@ function AlbumController({
   albumData,
   location,
   setLocation,
+  setSongSearch,
 }) {
   let currentLocation = "Worldwide";
   let selectLocation = "Select Location";
@@ -112,6 +113,7 @@ function AlbumController({
           location={location}
           setLocation={setLocation}
           setLocationMenu={setLocationMenu}
+          setSongSearch={setSongSearch}
         />
       )}
     </div>
@@ -120,6 +122,7 @@ function AlbumController({
 function AlbumCards(props) {
   const [albumCount, setAlbumCount] = useState(0);
   const currentAlbumData = props.albumData.slice(albumCount, albumCount + 9);
+
   const cards = currentAlbumData.map((card) => {
     return (
       <AlbumCard
@@ -135,6 +138,7 @@ function AlbumCards(props) {
   return (
     <div className="album-controller">
       <AlbumController
+        setSongSearch={props.setSongSearch}
         albumCount={albumCount}
         setAlbumCount={setAlbumCount}
         albumData={props.albumData}
@@ -156,6 +160,7 @@ export default function Albums(props) {
       location={props.location}
       setLocation={props.setLocation}
       searchEnabled={props.setSearchEnabled}
+      setSongSearch={props.setSongSearch}
     />
   );
 }
