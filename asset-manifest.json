@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/youtify/static/css/main.3c101a2b.css",
+    "main.js": "/youtify/static/js/main.a6ca7aca.js",
+    "static/js/787.f08eec81.chunk.js": "/youtify/static/js/787.f08eec81.chunk.js",
+    "static/media/CircularStd-Bold.otf": "/youtify/static/media/CircularStd-Bold.5c4514a8399ec0064b9b.otf",
+    "static/media/play_song.png": "/youtify/static/media/play_song.03876ee6ee84863258cb.png",
+    "static/media/icons8-github.svg": "/youtify/static/media/icons8-github.b1d6e5adc420c5107507f506a6459767.svg",
+    "static/media/icons8-youtube-music.svg": "/youtify/static/media/icons8-youtube-music.a8861bb2cc480736a62554a8bbeadf8b.svg",
+    "static/media/icons8-youtube.svg": "/youtify/static/media/icons8-youtube.92da3a1d8394ffc33453468536f6207d.svg",
+    "index.html": "/youtify/index.html",
+    "static/media/lyrics.svg": "/youtify/static/media/lyrics.da05034141f9e288c3c9d3f1c711f2d0.svg",
+    "static/media/search_white_24dp.svg": "/youtify/static/media/search_white_24dp.23a9386825e4eb45a4423223808c95e0.svg",
+    "static/media/search_black_24dp.svg": "/youtify/static/media/search_black_24dp.37abfb66abd980f52614.svg",
+    "static/media/speaker.svg": "/youtify/static/media/speaker.6daad440d10a6615ff2074f5d60710aa.svg",
+    "static/media/layers_black_24dp.svg": "/youtify/static/media/layers_black_24dp.54e94c8b79b49a23d57bc6c5555c41c6.svg",
+    "static/media/repeat.svg": "/youtify/static/media/repeat.28a40829c348b9104e806f4d958ba905.svg",
+    "static/media/download_black_24dp.svg": "/youtify/static/media/download_black_24dp.d8cc0e57a56c206ecc4287b2b779f95a.svg",
+    "static/media/shuffle.svg": "/youtify/static/media/shuffle.3bdb3f94aee52054a0dfdb59d8990c9c.svg",
+    "static/media/home_black_24dp.svg": "/youtify/static/media/home_black_24dp.4943a2ee4b1f64d794a03ef52ab5d9c6.svg",
+    "static/media/previous.svg": "/youtify/static/media/previous.3e4024d5cf2c587c5c6c6072e391614f.svg",
+    "static/media/next.svg": "/youtify/static/media/next.25eb49325d00c5fb139d6bbc188f9b95.svg",
+    "static/media/pause.svg": "/youtify/static/media/pause.01a90e10bcd310c04292f4d2fb5353b1.svg",
+    "static/media/play.svg": "/youtify/static/media/play.a80fc0693a460472c8b5a9e018843d94.svg",
+    "main.3c101a2b.css.map": "/youtify/static/css/main.3c101a2b.css.map",
+    "main.a6ca7aca.js.map": "/youtify/static/js/main.a6ca7aca.js.map",
+    "787.f08eec81.chunk.js.map": "/youtify/static/js/787.f08eec81.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3c101a2b.css",
+    "static/js/main.a6ca7aca.js"
+  ]
+}
