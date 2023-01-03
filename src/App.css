@@ -17,7 +17,7 @@ body {
 }
 .App {
   display: grid;
-  grid-template-columns: 170px auto;
+  grid-template-columns: 230px auto;
 }
 
 @font-face {

@@ -4,8 +4,8 @@
   justify-content: center;
   position: sticky;
   top: 0;
-  grid-row: 1/2;
   z-index: 1;
+
   flex-basis: auto;
   grid-column: 2/3;
   align-items: center;

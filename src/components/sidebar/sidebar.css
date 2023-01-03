@@ -6,7 +6,7 @@
   flex-direction: column;
   font-family: spotifyFont;
   font-weight: 550;
-  width: 130px;
+  width: 190px;
   position: fixed;
   top: 0;
   left: 0;
@@ -33,7 +33,7 @@
 .search-bar {
   text-decoration: none;
   color: darkgray;
-  font-size: 13px;
+  font-size: medium;
 }
 
 .home:hover,

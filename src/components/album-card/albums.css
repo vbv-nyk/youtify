@@ -16,7 +16,7 @@
   color: rgb(255, 255, 255);
   font-family: spotifyFont;
   padding: 5px;
-  font-size: x-large;
+  font-size: xx-large;
 }
 .navigation {
   gap: 5px;
@@ -38,24 +38,24 @@
   border-radius: 25px;
   height: 20px;
   margin: 0;
-  padding: 10px;
+  padding: 15px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: whitesmoke;
-  font-size: x-small;
+  font-size: small;
   font-weight: bolder;
   font-family: spotifyFont;
 }
 
 .album-container {
-  width: 740px;
+  width: 920px;
   margin: auto;
   padding: 5px;
   row-gap: 5px;
   background-color: rgba(255, 255, 255, 0.028);
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   font-family: spotifyFont;
   justify-items: center;
   color: white;
@@ -63,7 +63,7 @@
 }
 
 .album-item {
-  width: 240px;
+  width: 300px;
   text-align: left;
   background-color: rgba(106, 103, 103, 0.093);
   display: flex;
@@ -95,8 +95,8 @@
 
 .album-item:hover .overlay-info {
   display: flex;
-  width: 240px;
-  height: 180px;
+  width: 300px;
+  height: 220px;
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0),
