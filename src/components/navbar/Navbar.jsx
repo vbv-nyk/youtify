@@ -1,9 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./navbar.css";
 export default function Navbar(props) {
-  function searchSongs() {
-    console.log("Searching");
-  }
   return (
     <div className="navbar">
       <button
@@ -27,8 +25,15 @@ export default function Navbar(props) {
         <input
           className="song-input"
           type="text"
+          autoFocus
           placeholder="What do you want to listen to?"
-          onInput={() => searchSongs()}
+          onKeyDown={(e) => {
+            const currentInput = document.querySelector(".song-input");
+            if (e.key === "Enter" && e.target.value != props.songSearch) {
+              props.setSongSearch(e.target.value);
+              currentInput.blur();
+            }
+          }}
         />
       )}
 

@@ -12,7 +12,9 @@ export default function YoutubePlayer(props) {
       autoplay: 1,
     },
   };
-  if (id)
+  if (id) {
+    props.setSearchEnabled(false);
+
     return (
       <div className="youtube-player-container">
         <YouTube
@@ -26,5 +28,6 @@ export default function YoutubePlayer(props) {
         />
       </div>
     );
+  }
   return <h1>You don't have any video playing</h1>;
 }

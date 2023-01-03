@@ -8,26 +8,31 @@ import PageFooter from "./components/footer/PageFooter";
 import MusicPlayer from "./components/music-player/MusicPLayer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import YoutubePlayer from "./components/YoutubePlayer/YoutubePlayer";
-import CountryMenu from "./components/countryList/CountryMenu";
 import { countries } from "./components/countryList/countryCodes";
 
-const api_key = "AIzaSyAZ1nXtCqJi04wnKMLFVPeN_b2mwIf1sMg";
+const api_key = "AIzaSyAucuL1DeRayKzpee6-zAcyb12BAVVh6ZI";
 let songsAlbumData = [];
-async function fetchData(location) {
+async function fetchData(location, songSearch) {
+  console.log("key called");
   let countryCode = "";
   if (location !== "") countryCode = countries[location];
   songsAlbumData = [];
-  console.log("Key called");
   let fetched = 0;
-  let maxResults = 100;
+  let maxResults = 50;
   let nextPageToken = "";
+  let youtubeData;
   while (fetched < maxResults) {
-    songsAlbumData = [];
-    const youtubeData = await fetch(
-      `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=${countryCode}&videoCategoryId=10&key=${api_key}&maxResults=50&pageToken=${nextPageToken}`
-    );
-    const youtubeDataJSON = await youtubeData.json();
-    maxResults = youtubeDataJSON.pageInfo.totalResults;
+    if (songSearch === "")
+      youtubeData = await fetch(
+        `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=${countryCode}&videoCategoryId=10&key=${api_key}&maxResults=50&pageToken=${nextPageToken}`
+      );
+    else {
+      youtubeData = await fetch(
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${songSearch}&type=video&key=${api_key}&videoCategoryId=10`
+      );
+    }
+    let youtubeDataJSON = await youtubeData.json();
+    maxResults = Math.min(youtubeDataJSON.pageInfo.totalResults, maxResults);
     for (let item of youtubeDataJSON.items) {
       songsAlbumData.push(item);
     }
@@ -44,20 +49,22 @@ function App() {
   const [currentPage, setCurrentPage] = useState(0);
   const [location, setLocation] = useState("");
   const [maxPage, setMaxPage] = useState(0);
+  const [songSearch, setSongSearch] = useState("");
   const [videoData, setVideoData] = useState({
     title: "",
     thumbnailURL: "",
     artistName: "",
   });
   function loadData() {
-    fetchData(location).then(() => {
+    fetchData(location, songSearch).then(() => {
       setAlbumData(songsAlbumData);
       setLoaded(true);
     });
   }
   useEffect(() => {
     loadData();
-  }, [location]);
+  }, [location, songSearch]);
+
   return (
     <Router>
       <div className="App">
@@ -73,6 +80,7 @@ function App() {
           currentPage={currentPage}
           setMaxPage={setMaxPage}
           maxPage={maxPage}
+          setSongSearch={setSongSearch}
         />
         <Routes>
           <Route
@@ -82,6 +90,7 @@ function App() {
               <Player>
                 {loaded && (
                   <Albums
+                    setSearchEnabled={setSearchEnabled}
                     albumData={albumData}
                     playing={playing}
                     setPlaying={setPlaying}
@@ -98,7 +107,10 @@ function App() {
             path="/nowPlaying"
             element={
               <Player setCurrentPage={setCurrentPage}>
-                <YoutubePlayer setCurrentPage={setCurrentPage} />
+                <YoutubePlayer
+                  setCurrentPage={setCurrentPage}
+                  setSearchEnabled={setSearchEnabled}
+                />
               </Player>
             }
           />
@@ -110,6 +122,7 @@ function App() {
                   playing={playing}
                   setPlaying={setPlaying}
                   setCurrentPage={setCurrentPage}
+                  setSearchEnabled={setSearchEnabled}
                 />
               </Player>
             }

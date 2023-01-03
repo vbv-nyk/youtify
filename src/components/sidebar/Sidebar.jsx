@@ -33,9 +33,15 @@ export default function Sidebar(props) {
       </div>
       <div className="search-bar-container">
         <img src={search} alt="" />
-        <a className="search-bar" onClick={() => props.setSearchEnabled(true)}>
+        <Link
+          className="search-bar"
+          to="/"
+          onClick={() => {
+            props.setSearchEnabled(true);
+          }}
+        >
           Search
-        </a>
+        </Link>
       </div>
       <div className="playlist-button-container">
         <img src={layers} alt="" />
@@ -49,13 +55,6 @@ export default function Sidebar(props) {
           Downloads
         </a>
       </div>
-      <div className="browse-youtube-container">
-        <img src={youtube} alt="" />
-        <Link to="nowPlaying" className="browse-youtube" href="google.com">
-          Now Playing
-        </Link>
-      </div>
-
       <div className="github-link-container">
         <img src={github} alt="" />
         <a className="github-link" href="google.com">

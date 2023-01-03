@@ -17,28 +17,23 @@
 .currently-playing {
   display: flex;
   align-items: center;
-  width: 200px;
-  overflow: hidden;
+  width: 100px;
   font-size: small;
   gap: 10px;
 }
 
+.music-name-container {
+  width: max-content;
+  overflow: hidden;
+}
 .music-name {
   color: white;
+  width: 200px;
   position: relative;
   white-space: nowrap;
   font-size: small;
-  animation: moveTextLeftToRight 10s infinite alternate ease-in-out;
 }
 
-@keyframes moveTextLeftToRight {
-  from {
-    right: 0%;
-  }
-  to {
-    right: calc(100% - 200px);
-  }
-}
 .artists {
   font-size: xx-small;
   color: lightgray;
@@ -55,7 +50,6 @@
 .music-info {
   display: flex;
   gap: 10px;
-  width: 200px;
   flex-direction: column;
   justify-content: center;
   align-items: center;

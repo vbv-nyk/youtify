@@ -99,12 +99,12 @@
   height: 180px;
   background: linear-gradient(
     to bottom,
-    black,
-    black,
-    rgba(128, 128, 128, 0.798),
-    rgba(128, 128, 128, 0.798),
-    rgba(128, 128, 128, 0.798),
-    rgba(128, 128, 128, 0.798),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0),
+    rgba(128, 128, 128, 0),
+    rgba(128, 128, 128, 0),
+    rgba(128, 128, 128, 0),
+    rgba(128, 128, 128, 0),
     black,
     black,
     black,

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./albums.css";
 import playButton from "../../images/play_song.png";
 import { Link } from "react-router-dom";
@@ -37,7 +37,7 @@ function AlbumCard(props) {
         loading="lazy"
       />
       <Link
-        to={`/player/${props.album.id}`}
+        to={`/player/${props.album.id.videoId ?? props.album.id}`}
         style={{ textDecoration: "none" }}
         className="overlay-info"
         onClick={() => {
@@ -124,7 +124,8 @@ function AlbumCards(props) {
     return (
       <AlbumCard
         album={card}
-        key={card.id}
+        searchEnabled={props.setSearchEnabled}
+        key={card.id.videoId ?? card.id}
         playing={props.playing}
         setPlaying={props.setPlaying}
         setVideoData={props.setVideoData}
@@ -154,6 +155,7 @@ export default function Albums(props) {
       setVideoData={props.setVideoData}
       location={props.location}
       setLocation={props.setLocation}
+      searchEnabled={props.setSearchEnabled}
     />
   );
 }

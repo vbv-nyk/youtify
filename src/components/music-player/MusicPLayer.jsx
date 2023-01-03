@@ -16,7 +16,9 @@ export default function MusicPlayer(props) {
         <img src={props.videoData.thumbnailURL} className="music-thumbnail" />
         <div className="currently-playing">
           <div className="current-song-details">
-            <div className="music-name">{props.videoData.title}</div>
+            <div className="music-name-container">
+              <div className="music-name">{props.videoData.title}</div>
+            </div>
             <div className="artists">{props.videoData.artistName}</div>
           </div>
         </div>
