@@ -7,7 +7,11 @@ export default function CountryMenu(props) {
   console.log(keys);
   const countryList = keys.map((country) => {
     return (
-      <div key={country} onClick={() => props.setLocation(country)}>
+      <div
+        className="country-item"
+        key={country}
+        onClick={() => props.setLocation(country)}
+      >
         {country}
       </div>
     );

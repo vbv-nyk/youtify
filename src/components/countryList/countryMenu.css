@@ -7,6 +7,15 @@
   height: 200px;
   position: absolute;
   gap: 5px;
+  text-align: center;
   z-index: 2;
-  background-color: rgb(155, 128, 128);
+  background-color: gray;
+  border: solid 1px black;
+}
+
+.country-item {
+  padding: 15px;
+  color: white;
+  font-family: spotifyFont;
+  border-bottom: 1px solid black;
 }

@@ -51,6 +51,24 @@ function AlbumCard(props) {
   );
 }
 
+function Navigation(props) {
+  return (
+    <div className="navigation">
+      <button
+        className="back-button"
+        onClick={() => props.setAlbumCount((n) => Math.max(n - 9, 0))}
+      >{`Previous Page`}</button>
+      <button
+        className="forward-button"
+        onClick={() =>
+          props.setAlbumCount((n) =>
+            Math.min(n + 9, props.albumData.length - 9)
+          )
+        }
+      >{`Next Page`}</button>
+    </div>
+  );
+}
 function AlbumController({ albumCount, setAlbumCount, albumData, location }) {
   let currentLocation = "Worldwide";
   let selectLocation = "Select Location";
@@ -64,18 +82,7 @@ function AlbumController({ albumCount, setAlbumCount, albumData, location }) {
         <div className="title">{`Trending ${currentLocation}`}</div>
         <button className="change-location">{selectLocation}</button>
       </div>
-      <div className="navigation">
-        <button
-          className="back-button"
-          onClick={() => setAlbumCount((n) => Math.max(n - 9, 0))}
-        >{`Previous Page`}</button>
-        <button
-          className="forward-button"
-          onClick={() =>
-            setAlbumCount((n) => Math.min(n + 9, albumData.length - 9))
-          }
-        >{`Next Page`}</button>
-      </div>
+      <Navigation setAlbumCount={setAlbumCount} albumData={albumData} />
     </div>
   );
 }

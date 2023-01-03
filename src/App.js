@@ -115,7 +115,6 @@ function App() {
           />
         </Routes>
         <CountryMenu location={location} setLocation={setLocation} />
-
         {playing && <MusicPlayer videoData={videoData} />}
         <PageFooter />
       </div>
