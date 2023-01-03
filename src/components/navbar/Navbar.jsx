@@ -4,7 +4,6 @@ export default function Navbar(props) {
   function searchSongs() {
     console.log("Searching");
   }
-  console.log(props.currentPage);
   return (
     <div className="navbar">
       <button

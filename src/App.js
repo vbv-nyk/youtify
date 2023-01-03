@@ -88,6 +88,7 @@ function App() {
                     setVideoData={setVideoData}
                     location={location}
                     setCurrentPage={setCurrentPage}
+                    setLocation={setLocation}
                   />
                 )}
               </Player>
@@ -114,7 +115,6 @@ function App() {
             }
           />
         </Routes>
-        <CountryMenu location={location} setLocation={setLocation} />
         {playing && <MusicPlayer videoData={videoData} />}
         <PageFooter />
       </div>

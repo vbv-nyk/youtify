@@ -1,21 +1,28 @@
-.countries-container {
-  overflow-y: scroll;
-  list-style: none;
-  top: 50%;
-  margin-top: -100px;
-  left: 50%;
-  height: 200px;
+.countries-list-menu {
   position: absolute;
-  gap: 5px;
+  z-index: 1;
+  top: 0;
+  height: 100%;
+  width: calc(100% - 170px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.926);
+}
+
+.country-list {
+  background-color: rgb(31, 28, 28);
+  width: 400px;
+  height: 300px;
   text-align: center;
-  z-index: 2;
-  background-color: gray;
-  border: solid 1px black;
+  border-radius: 30px;
+  overflow-y: scroll;
 }
 
 .country-item {
   padding: 15px;
-  color: white;
+  font-size: small;
+  color: whitesmoke;
   font-family: spotifyFont;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(48, 36, 36);
 }

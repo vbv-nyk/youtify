@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./albums.css";
 import playButton from "../../images/play_song.png";
 import { Link } from "react-router-dom";
+import CountryMenu from "../countryList/CountryMenu";
 
 function AlbumCard(props) {
   function changeNavColor() {
@@ -17,7 +18,6 @@ function AlbumCard(props) {
   }
   function updateMusicController() {
     props.setPlaying(true);
-    console.log(props);
     const currentSongData = {
       title: props.album.snippet.title,
       thumbnailURL: props.album.snippet.thumbnails.high.url,
@@ -69,9 +69,22 @@ function Navigation(props) {
     </div>
   );
 }
-function AlbumController({ albumCount, setAlbumCount, albumData, location }) {
+function AlbumController({
+  albumCount,
+  setAlbumCount,
+  albumData,
+  location,
+  setLocation,
+}) {
   let currentLocation = "Worldwide";
   let selectLocation = "Select Location";
+  const [locationMenu, setLocationMenu] = useState(false);
+  const body = document.querySelector("body");
+  if (locationMenu) {
+    body.classList.add("no-scroll");
+  } else {
+    body.classList.remove("no-scroll");
+  }
   if (location !== "") {
     currentLocation = `in ` + location;
     selectLocation = location;
@@ -80,9 +93,27 @@ function AlbumController({ albumCount, setAlbumCount, albumData, location }) {
     <div className="header-holder">
       <div className="location-info">
         <div className="title">{`Trending ${currentLocation}`}</div>
-        <button className="change-location">{selectLocation}</button>
+        <button
+          className="change-location"
+          onClick={() => {
+            setLocationMenu((n) => !n);
+          }}
+        >
+          {selectLocation}
+        </button>
       </div>
-      <Navigation setAlbumCount={setAlbumCount} albumData={albumData} />
+      <Navigation
+        setAlbumCount={setAlbumCount}
+        albumData={albumData}
+        setLocationMenu={setLocationMenu}
+      />
+      {locationMenu && (
+        <CountryMenu
+          location={location}
+          setLocation={setLocation}
+          setLocationMenu={setLocationMenu}
+        />
+      )}
     </div>
   );
 }
@@ -106,6 +137,7 @@ function AlbumCards(props) {
         albumCount={albumCount}
         setAlbumCount={setAlbumCount}
         albumData={props.albumData}
+        setLocation={props.setLocation}
         location={props.location}
       />
       <div className="album-container">{cards}</div>;
@@ -121,6 +153,7 @@ export default function Albums(props) {
       setPlaying={props.setPlaying}
       setVideoData={props.setVideoData}
       location={props.location}
+      setLocation={props.setLocation}
     />
   );
 }
