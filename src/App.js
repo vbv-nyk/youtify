@@ -9,6 +9,7 @@ import MusicPlayer from "./components/music-player/MusicPLayer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import YoutubePlayer from "./components/YoutubePlayer/YoutubePlayer";
 import { countries } from "./components/countryList/countryCodes";
+import Homepage from "./components/homepage/Hompage";
 
 const api_key = "AIzaSyAucuL1DeRayKzpee6-zAcyb12BAVVh6ZI";
 let songsAlbumData = [];
@@ -84,6 +85,7 @@ function App() {
           setSongSearch={setSongSearch}
         />
         <Routes>
+          <Route path="/youtify" element={Homepage} />
           <Route
             path="/"
             exact

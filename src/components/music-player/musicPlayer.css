@@ -22,7 +22,7 @@
 }
 
 .music-name-container {
-  width: max-content;
+  width: 140px;
   overflow: hidden;
 }
 .music-name {

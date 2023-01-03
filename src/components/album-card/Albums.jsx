@@ -152,15 +152,17 @@ function AlbumCards(props) {
 
 export default function Albums(props) {
   return (
-    <AlbumCards
-      albumData={props.albumData}
-      playing={props.playing}
-      setPlaying={props.setPlaying}
-      setVideoData={props.setVideoData}
-      location={props.location}
-      setLocation={props.setLocation}
-      searchEnabled={props.setSearchEnabled}
-      setSongSearch={props.setSongSearch}
-    />
+    <>
+      <AlbumCards
+        albumData={props.albumData}
+        playing={props.playing}
+        setPlaying={props.setPlaying}
+        setVideoData={props.setVideoData}
+        location={props.location}
+        setLocation={props.setLocation}
+        searchEnabled={props.setSearchEnabled}
+        setSongSearch={props.setSongSearch}
+      />
+    </>
   );
 }
