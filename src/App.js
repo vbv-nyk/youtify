@@ -9,10 +9,13 @@ import MusicPlayer from "./components/music-player/MusicPLayer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import YoutubePlayer from "./components/YoutubePlayer/YoutubePlayer";
 import CountryMenu from "./components/countryList/CountryMenu";
+import { countries } from "./components/countryList/countryCodes";
 
 const api_key = "AIzaSyAZ1nXtCqJi04wnKMLFVPeN_b2mwIf1sMg";
 let songsAlbumData = [];
-async function fetchData(countryCode) {
+async function fetchData(location) {
+  let countryCode = "";
+  if (location !== "") countryCode = countries[location];
   songsAlbumData = [];
   console.log("Key called");
   let fetched = 0;
@@ -111,7 +114,7 @@ function App() {
             }
           />
         </Routes>
-        <CountryMenu />
+        <CountryMenu location={location} setLocation={setLocation} />
 
         {playing && <MusicPlayer videoData={videoData} />}
         <PageFooter />

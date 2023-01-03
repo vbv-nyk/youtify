@@ -53,14 +53,16 @@ function AlbumCard(props) {
 
 function AlbumController({ albumCount, setAlbumCount, albumData, location }) {
   let currentLocation = "Worldwide";
+  let selectLocation = "Select Location";
   if (location !== "") {
-    currentLocation = `in` + location;
+    currentLocation = `in ` + location;
+    selectLocation = location;
   }
   return (
     <div className="header-holder">
       <div className="location-info">
         <div className="title">{`Trending ${currentLocation}`}</div>
-        <button className="change-location">Select Location</button>
+        <button className="change-location">{selectLocation}</button>
       </div>
       <div className="navigation">
         <button
