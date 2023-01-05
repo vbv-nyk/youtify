@@ -1,14 +1,20 @@
 .countries-list-menu {
-  position: absolute;
+  position: fixed;
   z-index: 1;
-  top: 0;
-  height: 100%;
-  width: calc(100% - 170px);
+  border-radius: 25px;
+  height: calc(100vh - 70px);
+  background-color: rgba(0, 0, 0, 0.97);
+  top: 70px;
+  right: 0px;
+  width: calc(100vw - 230px);
   display: flex;
+  overflow: hidden;
+  font-family: spotifyFont;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.926);
+  color: white;
+  text-align: center;
 }
 
 .country-input {

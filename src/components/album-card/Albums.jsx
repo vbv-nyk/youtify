@@ -31,11 +31,6 @@ function AlbumCard(props) {
       onMouseEnter={() => changeNavColor()}
       onMouseLeave={() => defaultNavColor()}
     >
-      <img
-        src={props.album.snippet.thumbnails.high.url}
-        alt={props.album.snippet.thumbnails.default.url}
-        loading="lazy"
-      />
       <Link
         to={`/player/${props.album.id.videoId ?? props.album.id}`}
         style={{ textDecoration: "none" }}
@@ -44,7 +39,15 @@ function AlbumCard(props) {
           updateMusicController();
         }}
       >
-        <img src={playButton} />
+        <div className="img-container">
+          <img
+            className="album-img"
+            src={props.album.snippet.thumbnails.high.url}
+            alt={props.album.snippet.thumbnails.default.url}
+            loading="lazy"
+          />
+          <img src={playButton} className="play-button" />
+        </div>
         <div className="album-name">{props.album.snippet.title}</div>
       </Link>
     </div>
@@ -54,6 +57,14 @@ function AlbumCard(props) {
 function Navigation(props) {
   return (
     <div className="navigation">
+      <button
+        className="change-location"
+        onClick={() => {
+          props.setLocationMenu((n) => !n);
+        }}
+      >
+        {props.selectLocation}
+      </button>
       <button
         className="back-button"
         onClick={() => props.setAlbumCount((n) => Math.max(n - 9, 0))}
@@ -75,43 +86,30 @@ function AlbumController({
   albumData,
   location,
   setLocation,
+  albumContainerName,
   setSongSearch,
+  setAlbumContainerName,
 }) {
-  let currentLocation = "Worldwide";
-  let selectLocation = "Select Location";
+  let selectLocation = "Change Location";
   const [locationMenu, setLocationMenu] = useState(false);
-  const body = document.querySelector("body");
-  if (locationMenu) {
-    body.classList.add("no-scroll");
-  } else {
-    body.classList.remove("no-scroll");
-  }
-  if (location !== "") {
-    currentLocation = `in ` + location;
-    selectLocation = location;
-  }
+
   return (
-    <div className="header-holder">
+    <div className="header-holder no-scrollbar">
       <div className="location-info">
-        <div className="title">{`Trending ${currentLocation}`}</div>
-        <button
-          className="change-location"
-          onClick={() => {
-            setLocationMenu((n) => !n);
-          }}
-        >
-          {selectLocation}
-        </button>
+        <div className="title">{`${albumContainerName}`}</div>
       </div>
+
       <Navigation
         setAlbumCount={setAlbumCount}
         albumData={albumData}
         setLocationMenu={setLocationMenu}
+        selectLocation={selectLocation}
       />
       {locationMenu && (
         <CountryMenu
           location={location}
           setLocation={setLocation}
+          setAlbumContainerName={setAlbumContainerName}
           setLocationMenu={setLocationMenu}
           setSongSearch={setSongSearch}
         />
@@ -144,6 +142,8 @@ function AlbumCards(props) {
         albumData={props.albumData}
         setLocation={props.setLocation}
         location={props.location}
+        albumContainerName={props.albumContainerName}
+        setAlbumContainerName={props.setAlbumContainerName}
       />
       <div className="album-container">{cards}</div>;
     </div>
@@ -162,6 +162,8 @@ export default function Albums(props) {
         setLocation={props.setLocation}
         setSearchEnabled={props.setSearchEnabled}
         setSongSearch={props.setSongSearch}
+        albumContainerName={props.albumContainerName}
+        setAlbumContainerName={props.setAlbumContainerName}
       />
     </>
   );

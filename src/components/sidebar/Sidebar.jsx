@@ -46,19 +46,23 @@ export default function Sidebar(props) {
       </div>
       <div className="playlist-button-container">
         <img src={layers} alt="" />
-        <a className="playlist-button" href="google.com">
+        <div className="playlist-button" href="google.com">
           Playlists
-        </a>
+        </div>
       </div>
       <div className="downloads-container">
         <img src={download} alt="" />
-        <a className="downloads" href="google.com">
+        <div className="downloads" href="google.com">
           Downloads
-        </a>
+        </div>
       </div>
       <div className="github-link-container">
         <img src={github} alt="" />
-        <a className="github-link" href="google.com">
+        <a
+          className="github-link"
+          href="https://www.google.com"
+          style={{ cursor: "pointer" }}
+        >
           View Source
         </a>
       </div>

@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Premium from "../premium/Premium";
 import "./navbar.css";
+
 export default function Navbar(props) {
   return (
     <div className="navbar">
@@ -31,15 +33,24 @@ export default function Navbar(props) {
             const currentInput = document.querySelector(".song-input");
             if (e.key === "Enter" && e.target.value != props.songSearch) {
               props.setSongSearch(e.target.value);
+              props.setAlbumContainerName(
+                `Search results for "${e.target.value}"`
+              );
               currentInput.blur();
             }
           }}
         />
       )}
 
-      <a className="premium" href="google.com">
+      <div
+        className="premium"
+        onClick={() => {
+          props.setPremiumOpen((n) => !n);
+        }}
+      >
         Premium
-      </a>
+      </div>
+      {props.premiumOpen && <Premium setPremiumOpen={props.setPremiumOpen} />}
       <a className="support" href="google.com">
         Support
       </a>

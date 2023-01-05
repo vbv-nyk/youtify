@@ -9,7 +9,9 @@
 .header-holder {
   display: flex;
   gap: 20px;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 60px;
 }
 
 .title {
@@ -30,6 +32,7 @@
   align-items: center;
   gap: 5px;
 }
+
 .navigation .forward-button,
 .navigation .back-button,
 .change-location {
@@ -49,11 +52,10 @@
 }
 
 .album-container {
-  width: 920px;
+  width: 1000px;
   margin: auto;
   padding: 5px;
-  row-gap: 5px;
-  background-color: rgba(255, 255, 255, 0.028);
+  row-gap: 10px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   font-family: spotifyFont;
@@ -63,64 +65,44 @@
 }
 
 .album-item {
+  height: 230px;
   width: 300px;
   text-align: left;
-  background-color: rgba(106, 103, 103, 0.093);
   display: flex;
   flex-direction: column;
-  transition: all 200ms;
+  background-color: rgba(255, 255, 255, 0.053);
+  transition: background-color 200ms;
 }
-
+.album-img {
+  height: 170px;
+  width: 300px;
+  object-fit: cover;
+}
 .album-name {
-  white-space: nowrap;
-  overflow: hidden;
   color: white;
   text-decoration: none;
   text-align: center;
-}
-
-.overlay-info {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-direction: column;
-}
-
-.overlay-info img {
-  margin-top: 50px;
-  height: 50px;
-  width: 50px;
-}
-
-.album-item:hover .overlay-info {
-  display: flex;
-  width: 300px;
-  height: 220px;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0),
-    rgba(128, 128, 128, 0),
-    rgba(128, 128, 128, 0),
-    rgba(128, 128, 128, 0),
-    rgba(128, 128, 128, 0),
-    black,
-    black,
-    black,
-    black
-  );
-  position: absolute;
+  font-size: x-small;
+  padding: 10px;
 }
 
 .album-item:hover {
-  background-color: rgba(106, 103, 103, 0.612);
+  background-color: rgba(18, 17, 17, 0.874);
 }
+.play-button {
+  position: relative;
+  top: -60px;
+  left: 220px;
+  height: 50px;
+  width: 50px;
+  display: none;
+}
+
+.album-item:hover .play-button {
+  display: unset;
+}
+
 .album-item:hover .album-name {
-  white-space: normal;
-  overflow: visible;
-  font-family: spotifyFont;
-  font-size: small;
-  word-wrap: break-word;
-  padding: 10px;
+  position: relative;
+  top: -52px;
 }

@@ -1,23 +1,38 @@
 .premium-window-overlay {
-  position: absolute;
+  position: fixed;
   z-index: 1;
   border-radius: 25px;
-  padding: 25px;
-  height: 100%;
-  width: 100%;
-  gap: 15px;
+  height: calc(100vh - 70px);
+  background-color: rgba(0, 0, 0, 0.97);
+  top: 70px;
+  width: calc(100vw - 230px);
   display: flex;
+  overflow: hidden;
   font-family: spotifyFont;
   flex-direction: column;
-  color: white;
+  justify-content: center;
   align-items: center;
+  color: white;
   text-align: center;
-  background: linear-gradient(to bottom, rgb(42, 40, 40), rgb(36, 33, 33));
 }
 
 .premium-header {
-  padding-bottom: 0;
+  padding: 25px;
+  background: linear-gradient(to bottom, rgb(46, 41, 35), rgb(36, 33, 30));
+  width: 400px;
+  font-size: x-large;
+  color: rgb(1, 90, 255);
   text-align: center;
   display: flex;
+  border-radius: 15px 15px 0px 0px;
   justify-content: center;
+}
+
+.premium-info {
+  font-size: medium;
+  width: 400px;
+  background: linear-gradient(to bottom, rgb(46, 41, 35), rgb(36, 33, 30));
+  padding: 25px;
+  border-radius: 0px 0px 15px 15px;
+  color: rgb(17, 199, 60);
 }

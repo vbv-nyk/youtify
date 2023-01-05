@@ -6,8 +6,10 @@ export default function CountryMenu(props) {
   const keys = Object.keys(countries);
   const [inputText, setInputText] = useState("");
   const countryList = keys
-    .filter((filteredCountry) =>
-      filteredCountry.toLocaleLowerCase().includes(inputText)
+    .filter(
+      (filteredCountry) =>
+        filteredCountry.toLocaleLowerCase().includes(inputText) ||
+        filteredCountry.includes(inputText)
     )
     .map((country) => {
       return (
@@ -18,6 +20,7 @@ export default function CountryMenu(props) {
             props.setLocation(country);
             props.setSongSearch("");
             props.setLocationMenu(false);
+            props.setAlbumContainerName(`Trending in ${country}`);
           }}
         >
           {country}

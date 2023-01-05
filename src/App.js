@@ -44,6 +44,8 @@ async function fetchData(location, songSearch) {
 }
 
 function App() {
+  const [albumContainerName, setAlbumContainerName] =
+    useState("Trending Worldwide");
   const [searchEnabled, setSearchEnabled] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [playing, setPlaying] = useState(false);
@@ -51,6 +53,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(0);
   const [location, setLocation] = useState("");
   const [maxPage, setMaxPage] = useState(0);
+  const [premiumOpen, setPremiumOpen] = useState(false);
   const [songSearch, setSongSearch] = useState("");
   const [videoData, setVideoData] = useState({
     title: "",
@@ -83,7 +86,10 @@ function App() {
           currentPage={currentPage}
           setMaxPage={setMaxPage}
           maxPage={maxPage}
+          premiumOpen={premiumOpen}
+          setPremiumOpen={setPremiumOpen}
           setSongSearch={setSongSearch}
+          setAlbumContainerName={setAlbumContainerName}
         />
         <Routes>
           <Route path="/youtify" element={Homepage} />
@@ -103,6 +109,8 @@ function App() {
                     setCurrentPage={setCurrentPage}
                     setLocation={setLocation}
                     setSongSearch={setSongSearch}
+                    setAlbumContainerName={setAlbumContainerName}
+                    albumContainerName={albumContainerName}
                   />
                 )}
               </Player>
