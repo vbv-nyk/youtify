@@ -21,7 +21,7 @@ export default function Sidebar(props) {
       <div className="home-container">
         <img src={home} alt="" />
         <Link
-          to="/"
+          to="/youtify"
           className="home"
           onClick={() => {
             props.setSongSearch("");

@@ -92,9 +92,8 @@ function App() {
           setAlbumContainerName={setAlbumContainerName}
         />
         <Routes>
-          <Route path="/youtify" element={Homepage} />
           <Route
-            path="/"
+            path="/youtify"
             exact
             element={
               <Player>
