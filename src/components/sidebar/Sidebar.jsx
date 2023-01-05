@@ -19,10 +19,10 @@ export default function Sidebar(props) {
       <div className="home-container">
         <img src={home} alt="" />
         <Link
-          to="/"
+          to="/youtify/"
+          exact
           className="home"
           onClick={() => {
-            props.setSongSearch("");
             props.setSearchEnabled(false);
             props.setCurrentPage((n) => n + 1);
           }}
@@ -34,7 +34,7 @@ export default function Sidebar(props) {
         <img src={search} alt="" />
         <Link
           className="search-bar"
-          to="/youtify"
+          to="/youtify/"
           onClick={() => {
             props.setSearchEnabled(true);
           }}
@@ -44,15 +44,11 @@ export default function Sidebar(props) {
       </div>
       <div className="playlist-button-container">
         <img src={layers} alt="" />
-        <div className="playlist-button" href="google.com">
-          Playlists
-        </div>
+        <div className="playlist-button">Playlists</div>
       </div>
       <div className="downloads-container">
         <img src={download} alt="" />
-        <div className="downloads" href="google.com">
-          Downloads
-        </div>
+        <div className="downloads">Downloads</div>
       </div>
       <div className="github-link-container">
         <img src={github} alt="" />
