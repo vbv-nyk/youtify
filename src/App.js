@@ -93,7 +93,30 @@ function App() {
         />
         <Routes>
           <Route
-            path="/youtify/"
+            path="/youtify"
+            exact
+            element={
+              <Player>
+                {loaded && (
+                  <Albums
+                    setSearchEnabled={setSearchEnabled}
+                    albumData={albumData}
+                    playing={playing}
+                    setPlaying={setPlaying}
+                    setVideoData={setVideoData}
+                    location={location}
+                    setCurrentPage={setCurrentPage}
+                    setLocation={setLocation}
+                    setSongSearch={setSongSearch}
+                    setAlbumContainerName={setAlbumContainerName}
+                    albumContainerName={albumContainerName}
+                  />
+                )}
+              </Player>
+            }
+          />{" "}
+          <Route
+            path="/"
             exact
             element={
               <Player>

@@ -19,7 +19,7 @@ export default function Sidebar(props) {
       <div className="home-container">
         <img src={home} alt="" />
         <Link
-          to="/youtify/"
+          to="/"
           className="home"
           onClick={() => {
             props.setSongSearch("");
@@ -34,7 +34,7 @@ export default function Sidebar(props) {
         <img src={search} alt="" />
         <Link
           className="search-bar"
-          to="/"
+          to="/youtify"
           onClick={() => {
             props.setSearchEnabled(true);
           }}
