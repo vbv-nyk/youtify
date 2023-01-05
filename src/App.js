@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import YoutubePlayer from "./components/YoutubePlayer/YoutubePlayer";
 import { countries } from "./components/countryList/countryCodes";
 import Homepage from "./components/homepage/Hompage";
+import Premium from "./components/premium/Premium";
 
 const api_key = "AIzaSyAucuL1DeRayKzpee6-zAcyb12BAVVh6ZI";
 let songsAlbumData = [];

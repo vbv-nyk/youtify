@@ -160,7 +160,7 @@ export default function Albums(props) {
         setVideoData={props.setVideoData}
         location={props.location}
         setLocation={props.setLocation}
-        searchEnabled={props.setSearchEnabled}
+        setSearchEnabled={props.setSearchEnabled}
         setSongSearch={props.setSongSearch}
       />
     </>
