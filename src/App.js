@@ -93,7 +93,7 @@ function App() {
         />
         <Routes>
           <Route
-            path="/youtify"
+            path="/youtify/"
             exact
             element={
               <Player>
