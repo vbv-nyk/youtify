@@ -14,9 +14,7 @@ export default function Sidebar(props) {
     <div className="sidebar">
       <div className="logo-container">
         <img src={logo} alt="" />
-        <a className="logo" href="www.youtube.com">
-          Youtify
-        </a>
+        <div className="logo">Youtify</div>
       </div>
       <div className="home-container">
         <img src={home} alt="" />
