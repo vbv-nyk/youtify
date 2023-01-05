@@ -60,8 +60,8 @@ export default function Sidebar(props) {
         <img src={github} alt="" />
         <a
           className="github-link"
-          href="https://www.google.com"
           style={{ cursor: "pointer" }}
+          href="https://github.com/vbv-nyk/youtify"
         >
           View Source
         </a>
