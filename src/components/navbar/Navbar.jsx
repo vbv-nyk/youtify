@@ -47,19 +47,14 @@ export default function Navbar(props) {
         onClick={() => {
           props.setPremiumOpen((n) => !n);
         }}
+        style={{ cursor: "pointer" }}
       >
         Premium
       </div>
       {props.premiumOpen && <Premium setPremiumOpen={props.setPremiumOpen} />}
-      <a className="support" href="google.com">
-        Support
-      </a>
-      <a className="signup" href="google.com">
-        Sign up
-      </a>
-      <button className="login" href="google.com">
-        Log in
-      </button>
+      <div className="support">Support</div>
+      <div className="signup">Sign up</div>
+      <button className="login">Log in</button>
     </div>
   );
 }
