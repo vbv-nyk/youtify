@@ -1,3 +1,4 @@
+//test
 import "./App.css";
 import Sidebar from "./components/sidebar/Sidebar";
 import Navbar from "./components/navbar/Navbar";
@@ -12,6 +13,7 @@ import { countries } from "./components/countryList/countryCodes";
 import Homepage from "./components/homepage/Hompage";
 import Premium from "./components/premium/Premium";
 
+//Free api key
 const api_key = "AIzaSyAucuL1DeRayKzpee6-zAcyb12BAVVh6ZI";
 let songsAlbumData = [];
 async function fetchData(location, songSearch) {
